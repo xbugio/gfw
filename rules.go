@@ -62,7 +62,7 @@ table ip gfw {
 	}
 
 	chain GFW_REDIRECT {
-		ip protocol tcp redirect to :%v
+		tcp dport { 80, 443, 22, 25, 110, 143, 993, 994, 995, 465} redirect to :%v
 		accept
 	}
 }`
